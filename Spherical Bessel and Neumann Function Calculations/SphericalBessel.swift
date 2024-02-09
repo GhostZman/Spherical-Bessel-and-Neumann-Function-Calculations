@@ -14,7 +14,8 @@ import SwiftUI
     var solutionsUp: [Double] = []
     var solutionsDown: [Double] = []
     
-    func calculateFirst25Up(x: Double) {
+    
+    func calculateFirst25Up(x: Double) -> [Double] {
         Task{
             let combinedResults = await withTaskGroup(of: (Int, Double).self,
                                                       returning: [(Int, Double)].self,
@@ -39,9 +40,10 @@ import SwiftUI
                 solutionsUp.append(value.1)
             }
         }
+        return self.solutionsUp
     }
     
-    func calculateFirst25Down(x: Double) {
+    func calculateFirst25Down(x: Double) -> [Double] {
         Task{
             let combinedResults = await withTaskGroup(of: (Int, Double).self,
                                                       returning: [(Int, Double)].self,
@@ -66,6 +68,7 @@ import SwiftUI
                 solutionsDown.append(value.1)
             }
         }
+        return self.solutionsDown
     }
     
     func down(x: Double, order: Int, start: Int) async -> Double{
@@ -86,7 +89,7 @@ import SwiftUI
     
     func up(x: Double, order: Int) async -> Double{
         
-        var j: [Double] = Array(repeating: 0, count: order)
+        var j: [Double] = Array(repeating: 0, count: order + 2)
         
         j[0] = sin(x)/x
         j[1] = (sin(x)/pow(x,2))-(cos(x)/x)
