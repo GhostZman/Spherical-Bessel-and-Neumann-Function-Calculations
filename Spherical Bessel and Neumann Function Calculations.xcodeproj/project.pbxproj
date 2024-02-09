@@ -14,6 +14,13 @@
 		688DCD1F2B5B2EBE003E6EC0 /* Spherical_Bessel_and_Neumann_Function_CalculationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688DCD1E2B5B2EBE003E6EC0 /* Spherical_Bessel_and_Neumann_Function_CalculationsTests.swift */; };
 		688DCD292B5B2EBE003E6EC0 /* Spherical_Bessel_and_Neumann_Function_CalculationsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688DCD282B5B2EBE003E6EC0 /* Spherical_Bessel_and_Neumann_Function_CalculationsUITests.swift */; };
 		688DCD2B2B5B2EBE003E6EC0 /* Spherical_Bessel_and_Neumann_Function_CalculationsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688DCD2A2B5B2EBE003E6EC0 /* Spherical_Bessel_and_Neumann_Function_CalculationsUITestsLaunchTests.swift */; };
+		68EBAF7E2B76C9DE00BCE4C3 /* SphericalBessel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EBAF7D2B76C9DE00BCE4C3 /* SphericalBessel.swift */; };
+		68EBAF7F2B76C9DE00BCE4C3 /* SphericalBessel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EBAF7D2B76C9DE00BCE4C3 /* SphericalBessel.swift */; };
+		68EBAF802B76C9DE00BCE4C3 /* SphericalBessel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EBAF7D2B76C9DE00BCE4C3 /* SphericalBessel.swift */; };
+		68EBAF812B76C9E200BCE4C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688DCD0E2B5B2EBD003E6EC0 /* ContentView.swift */; };
+		68EBAF822B76C9E200BCE4C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688DCD0E2B5B2EBD003E6EC0 /* ContentView.swift */; };
+		68EBAF832B76C9E500BCE4C3 /* Spherical_Bessel_and_Neumann_Function_CalculationsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688DCD0C2B5B2EBD003E6EC0 /* Spherical_Bessel_and_Neumann_Function_CalculationsApp.swift */; };
+		68EBAF842B76C9E500BCE4C3 /* Spherical_Bessel_and_Neumann_Function_CalculationsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688DCD0C2B5B2EBD003E6EC0 /* Spherical_Bessel_and_Neumann_Function_CalculationsApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +52,7 @@
 		688DCD242B5B2EBE003E6EC0 /* Spherical Bessel and Neumann Function CalculationsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Spherical Bessel and Neumann Function CalculationsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		688DCD282B5B2EBE003E6EC0 /* Spherical_Bessel_and_Neumann_Function_CalculationsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spherical_Bessel_and_Neumann_Function_CalculationsUITests.swift; sourceTree = "<group>"; };
 		688DCD2A2B5B2EBE003E6EC0 /* Spherical_Bessel_and_Neumann_Function_CalculationsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spherical_Bessel_and_Neumann_Function_CalculationsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		68EBAF7D2B76C9DE00BCE4C3 /* SphericalBessel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SphericalBessel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,7 @@
 			children = (
 				688DCD0C2B5B2EBD003E6EC0 /* Spherical_Bessel_and_Neumann_Function_CalculationsApp.swift */,
 				688DCD0E2B5B2EBD003E6EC0 /* ContentView.swift */,
+				68EBAF7D2B76C9DE00BCE4C3 /* SphericalBessel.swift */,
 				688DCD102B5B2EBE003E6EC0 /* Assets.xcassets */,
 				688DCD122B5B2EBE003E6EC0 /* Spherical_Bessel_and_Neumann_Function_Calculations.entitlements */,
 				688DCD132B5B2EBE003E6EC0 /* Preview Content */,
@@ -260,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				688DCD0F2B5B2EBD003E6EC0 /* ContentView.swift in Sources */,
+				68EBAF7E2B76C9DE00BCE4C3 /* SphericalBessel.swift in Sources */,
 				688DCD0D2B5B2EBD003E6EC0 /* Spherical_Bessel_and_Neumann_Function_CalculationsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,7 +278,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68EBAF832B76C9E500BCE4C3 /* Spherical_Bessel_and_Neumann_Function_CalculationsApp.swift in Sources */,
 				688DCD1F2B5B2EBE003E6EC0 /* Spherical_Bessel_and_Neumann_Function_CalculationsTests.swift in Sources */,
+				68EBAF7F2B76C9DE00BCE4C3 /* SphericalBessel.swift in Sources */,
+				68EBAF812B76C9E200BCE4C3 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +290,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				688DCD292B5B2EBE003E6EC0 /* Spherical_Bessel_and_Neumann_Function_CalculationsUITests.swift in Sources */,
+				68EBAF802B76C9DE00BCE4C3 /* SphericalBessel.swift in Sources */,
+				68EBAF842B76C9E500BCE4C3 /* Spherical_Bessel_and_Neumann_Function_CalculationsApp.swift in Sources */,
+				68EBAF822B76C9E200BCE4C3 /* ContentView.swift in Sources */,
 				688DCD2B2B5B2EBE003E6EC0 /* Spherical_Bessel_and_Neumann_Function_CalculationsUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
