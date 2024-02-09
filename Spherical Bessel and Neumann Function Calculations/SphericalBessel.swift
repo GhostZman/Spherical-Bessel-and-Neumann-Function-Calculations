@@ -11,7 +11,37 @@ import SwiftUI
 
 @Observable class SphericalBessel {
     
-    func down(x: Double, order: Int, start: Int) -> Double{
+    var solutionsUp: [Double] = []
+    var solutionsDown: [Double] = []
+    
+    func calculateFirst25Up(x: Double) {
+        Task{
+            let combinedResults = await withTaskGroup(of: (Int, Double).self,
+                                                      returning: [(Int, Double)].self,
+                                                      body: { taskGroup in
+                
+                for i in 0...25 {
+                    
+                    taskGroup.addTask{
+                        let besselI = await self.up(x: x, order: i)
+                        return (i, besselI)
+                    }
+                }
+                var combinedTaskResults :[(Int, Double)] = []
+                for await result in taskGroup{
+                    combinedTaskResults.append(result)
+                }
+                return combinedTaskResults
+            })
+            let sortedCombinedResults = combinedResults.sorted(by: { $0.0 < $1.0 })
+            self.solutionsUp = []
+            for value in sortedCombinedResults{
+                solutionsUp.append(value.1)
+            }
+        }
+    }
+    
+    func down(x: Double, order: Int, start: Int) async -> Double{
         var scale: Double
         var j: [Double] = Array(repeating: 0, count: start + 2 )
         
@@ -27,7 +57,7 @@ import SwiftUI
         return j[order]*scale
     }
     
-    func up(x: Double, order: Int) -> Double{
+    func up(x: Double, order: Int) async -> Double{
         
         var j: [Double] = Array(repeating: 0, count: order)
         
