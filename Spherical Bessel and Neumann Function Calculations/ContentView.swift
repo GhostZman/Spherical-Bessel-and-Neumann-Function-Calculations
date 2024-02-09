@@ -34,6 +34,7 @@ struct ContentView: View {
                     Text("l: \(index)")
                     Text("J_l up: \(jValuesUp.indices.contains(index) ? "\(jValuesUp[index])" : "-")")
                     Text("J_l down: \(jValuesDown.indices.contains(index) ? "\(jValuesDown[index])" : "-")")
+                    Text("Relative difference: \(jValuesDown.indices.contains(index) && jValuesUp.indices.contains(index) ? "\((abs(jValuesUp[index]-jValuesDown[index]))/(abs(jValuesUp[index])+abs(jValuesDown[index])))" : "-")")
                 }
             }
         }
