@@ -41,6 +41,33 @@ import SwiftUI
         }
     }
     
+    func calculateFirst25Down(x: Double) {
+        Task{
+            let combinedResults = await withTaskGroup(of: (Int, Double).self,
+                                                      returning: [(Int, Double)].self,
+                                                      body: { taskGroup in
+                
+                for i in 0...25 {
+                    
+                    taskGroup.addTask{
+                        let besselI = await self.down(x: x, order: i, start: 26)
+                        return (i, besselI)
+                    }
+                }
+                var combinedTaskResults :[(Int, Double)] = []
+                for await result in taskGroup{
+                    combinedTaskResults.append(result)
+                }
+                return combinedTaskResults
+            })
+            let sortedCombinedResults = combinedResults.sorted(by: { $0.0 < $1.0 })
+            self.solutionsDown = []
+            for value in sortedCombinedResults{
+                solutionsDown.append(value.1)
+            }
+        }
+    }
+    
     func down(x: Double, order: Int, start: Int) async -> Double{
         var scale: Double
         var j: [Double] = Array(repeating: 0, count: start + 2 )
